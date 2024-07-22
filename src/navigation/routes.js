@@ -54,10 +54,18 @@ const routes = [
     {
         name: RouteNames.OPT_VERFICATION_SCREEN,
         component: OtpVerficationScreen,
+        options: {
+            ...commonProps,
+            header: (props) => <Header title={'OTP Verification'} {...props} />
+        }
     },
     {
         name: RouteNames.WHATS_YOUR_EMAIL_ADDRESS_SCREEN,
         component: WhatsYourEmailAddressScreen,
+        options: {
+            ...commonProps,
+            header: (props) => <Header title={'What\'t your\nemail address'} {...props} />
+        }
     },
     {
         name: RouteNames.CREATE_PASSWORD_SCREEN,

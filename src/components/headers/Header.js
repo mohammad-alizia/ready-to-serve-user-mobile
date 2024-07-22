@@ -3,6 +3,7 @@ import React from 'react'
 import { icons } from '../../assets/icons/iconsExporter'
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { svg } from '../../assets/svg/svgExporter';
+import getFontSize from '../../utils/styles/standardFonts';
 
 const { ArrowLeft } = icons;
 
@@ -28,7 +29,7 @@ const Header = ({
                     justifyContent: 'center',
                     alignItems: 'center'
                 }}>
-                    <Text style={{ fontSize: 19, fontWeight: '600', textAlign: 'center' }}>{title}</Text>
+                    <Text style={{ fontSize: getFontSize('subHeading'), fontWeight: '600', textAlign: 'center' }}>{title}</Text>
                 </View>
                 : <></>}
             <View style={{ flex: 1 / 2, paddingRight: 10 }}>
