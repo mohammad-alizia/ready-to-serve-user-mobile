@@ -9,22 +9,26 @@ const { arrowNext: ArrowNext, ArrowNextDisabled } = icons;
 
 const NextButton = ({
     icon = false,
+    customIcon,
     title = "button",
     disabled = false,
     customBtnStyles = {},
+    customTextStyles = {},
+    isCenter = true,
     onPress = () => { }, }) => {
     return (
         <TouchableOpacity disabled={disabled} style={{ ...styles.btnBody(disabled), ...customBtnStyles }} onPress={onPress}>
-            <Text style={[styles.btnTitle(disabled), { marginLeft: 20 }]}>{' '}</Text>
-            <Text style={styles.btnTitle(disabled)}>{title}</Text>
+            <Text style={[styles.btnTitle(disabled), { marginLeft: 20, flex: isCenter ? 1 : 1 / 5, }]}>{' '}</Text>
+            <Text style={[styles.btnTitle(disabled), customTextStyles]}>{title}</Text>
             <View style={{
                 display: 'flex',
                 justifyContent: "center",
                 alignItems: 'flex-end',
-                flex: 1,
+                flex: isCenter ? 1 : 1 / 5,
                 paddingRight: 20
             }}>
-                {icon ? !disabled ? <ArrowNext /> : <ArrowNextDisabled /> : <></>}
+                {customIcon && customIcon}
+                {(icon && !customIcon) ? !disabled ? <ArrowNext /> : <ArrowNextDisabled /> : <></>}
             </View>
 
         </TouchableOpacity>

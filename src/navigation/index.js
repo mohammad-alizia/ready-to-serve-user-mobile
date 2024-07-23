@@ -14,7 +14,7 @@ const Navigation = ({
     return (
         <NavigationContainer>
             <Stack.Navigator
-                initialRouteName={RouteNames.REGISTER_SCREEN}>
+                initialRouteName={RouteNames.ENABLE_LOCATION_SCREEN}>
                 {routes.map((screen, index) => {
                     return <Stack.Screen
                         key={index}

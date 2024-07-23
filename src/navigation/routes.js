@@ -70,18 +70,34 @@ const routes = [
     {
         name: RouteNames.CREATE_PASSWORD_SCREEN,
         component: CreatePasswordScreen,
+        options: {
+            ...commonProps,
+            header: (props) => <Header title={'Create your account password'} {...props} />
+        }
     },
     {
         name: RouteNames.WHATS_YOUR_NAME_SCREEN,
         component: WhatsYourNameScreen,
+        options: {
+            ...commonProps,
+            header: (props) => <Header title={'What\'s your name?'} {...props} />
+        }
     },
     {
         name: RouteNames.ENABLE_LOCATION_SCREEN,
         component: EnableYourLocationScreen,
+        options: {
+            ...commonProps,
+            header: (props) => <Header title={'Enable your location'} {...props} />
+        }
     },
     {
         name: RouteNames.ADDRESS_INFO_SCREEN,
         component: AddressInfoScreen,
+        options: {
+            ...commonProps,
+            header: (props) => <Header title={'Address Information'} {...props} />
+        }
     },
     {
         name: RouteNames.SET_PREFERENCES_SCREEN,

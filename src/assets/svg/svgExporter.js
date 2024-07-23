@@ -6,5 +6,8 @@ export const svg = {
     onBoarding4: require('../svg/on-boarding/on-boarding-4.svg'),
 
     // welcome screen
-    welcome: require('../svg/welcome/welcome.svg')
+    welcome: require('../svg/welcome/welcome.svg'),
+
+    // enbale location
+    EnableLocation: require('../svg/enable-location/location.svg').default
 }
