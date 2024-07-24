@@ -6,6 +6,7 @@ import { svg } from '../../assets/svg/svgExporter';
 import { appColors } from '../../utils/styles/colors';
 import { Button } from '@ant-design/react-native';
 import RouteNames from '../../navigation/routeNames';
+import Wrapper from '../../components/screen-components/register/Wapper/Wrapper';
 
 const slides = [
     {
@@ -107,6 +108,7 @@ const OnBoardingScreen = ({ navigation }) => {
             {/* <View style={[styles.skipContainer]}>
                 <Text style={[styles.skipText, currentSlideIndex == 0 ? '' : { display: 'none' }]} onPress={() => skip()}>Skip</Text>
             </View> */}
+            {/* <Wrapper> */}
             <FlatList
                 ref={ref}
                 onMomentumScrollEnd={updateCurrentSlideIndex}
@@ -127,7 +129,7 @@ const OnBoardingScreen = ({ navigation }) => {
                 </View>}
 
 
-
+            {/* </Wrapper> */}
         </SafeAreaView>
     )
 }
@@ -217,10 +219,11 @@ const styles = StyleSheet.create({
     },
 
     buttonContainer: {
-        width: width,
+        width: width * 0.91,
         height: 100,
         justifyContent: "center",
-        alignItems: 'center'
+        alignItems: 'center',
+        marginHorizontal:'auto'
     },
     button: {
         // backgroundColor: AppColor.blueButton,

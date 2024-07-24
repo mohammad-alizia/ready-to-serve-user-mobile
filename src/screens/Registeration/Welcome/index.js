@@ -145,7 +145,9 @@ const styles = StyleSheet.create({
     },
 
     buttonContainer: {
-        width: width,
+        width: width * 0.91,
+        marginHorizontal:'auto',
+
         height: 100,
         justifyContent: "center",
         alignItems: 'center'

@@ -9,5 +9,8 @@ export const svg = {
     welcome: require('../svg/welcome/welcome.svg'),
 
     // enbale location
-    EnableLocation: require('../svg/enable-location/location.svg').default
+    EnableLocation: require('../svg/enable-location/location.svg').default,
+
+    //address- infor
+    MapPlaceholder: require('../svg/address-info/placeholder-map').default
 }

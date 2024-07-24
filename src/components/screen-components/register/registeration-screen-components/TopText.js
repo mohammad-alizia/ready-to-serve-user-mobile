@@ -2,9 +2,9 @@ import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
 import getFontSize from '../../../../utils/styles/standardFonts';
 
-const TopText = ({ text }) => {
+const TopText = ({ text, customStyles }) => {
     return (
-        <Text style={{ ...styles.top_text }}>{text}</Text>
+        <Text style={{ ...styles.top_text, ...customStyles }}>{text}</Text>
     )
 }
 

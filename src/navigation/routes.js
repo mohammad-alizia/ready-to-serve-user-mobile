@@ -14,6 +14,7 @@ import RouteNames from "./routeNames"
 import BackButton from "../components/headers/back-button/BackButton"
 import Header from "../components/headers/Header"
 import RegisterationScreen from "../screens/Registeration"
+import TabNavigator from "./TabNavigator"
 
 const commonProps = {
     title: '',
@@ -22,6 +23,7 @@ const commonProps = {
 
 const routes = [
     {
+        id: 1,
         name: RouteNames.SPLASH_SCREEEN,
         component: SplashScreen,
         options: {
@@ -30,6 +32,7 @@ const routes = [
         },
     },
     {
+        id: 2,
         name: RouteNames.ONBOARDING_SCREEN,
         component: OnBoardingScreen,
         options: {
@@ -37,6 +40,7 @@ const routes = [
         }
     },
     {
+        id: 3,
         name: RouteNames.WELCOME_SCREEN,
         component: WelcomeScreen,
         options: {
@@ -44,6 +48,7 @@ const routes = [
         }
     },
     {
+        id: 4,
         name: RouteNames.REGISTER_SCREEN,
         component: RegisterationScreen,
         options: {
@@ -52,6 +57,7 @@ const routes = [
         }
     },
     {
+        id: 5,
         name: RouteNames.OPT_VERFICATION_SCREEN,
         component: OtpVerficationScreen,
         options: {
@@ -60,6 +66,7 @@ const routes = [
         }
     },
     {
+        id: 6,
         name: RouteNames.WHATS_YOUR_EMAIL_ADDRESS_SCREEN,
         component: WhatsYourEmailAddressScreen,
         options: {
@@ -68,6 +75,7 @@ const routes = [
         }
     },
     {
+        id: 7,
         name: RouteNames.CREATE_PASSWORD_SCREEN,
         component: CreatePasswordScreen,
         options: {
@@ -76,6 +84,7 @@ const routes = [
         }
     },
     {
+        id: 8,
         name: RouteNames.WHATS_YOUR_NAME_SCREEN,
         component: WhatsYourNameScreen,
         options: {
@@ -84,6 +93,7 @@ const routes = [
         }
     },
     {
+        id: 9,
         name: RouteNames.ENABLE_LOCATION_SCREEN,
         component: EnableYourLocationScreen,
         options: {
@@ -92,6 +102,7 @@ const routes = [
         }
     },
     {
+        id: 10,
         name: RouteNames.ADDRESS_INFO_SCREEN,
         component: AddressInfoScreen,
         options: {
@@ -100,12 +111,22 @@ const routes = [
         }
     },
     {
+        id: 11,
         name: RouteNames.SET_PREFERENCES_SCREEN,
         component: SetPreferencesScreen,
+        options: {
+            ...commonProps,
+            headerShown: false
+        }
     },
     {
+        id: 12,
         name: RouteNames.HOME_SCREEN,
-        component: HomeScreen,
+        component: TabNavigator,
+        options: {
+            ...commonProps,
+            headerShown: false
+        }
     },
 ]
 

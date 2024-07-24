@@ -11,7 +11,9 @@ const RouteNames = {
     ADDRESS_INFO_SCREEN: "address-info-screen",
     SET_PREFERENCES_SCREEN: "set-preferences-screen",
     HOME_SCREEN: "home-screen",
-
+    SERVICES_SCREEN: "services-screen",
+    ACTIVITY_SCREEN: "activity-screen",
+    ACCOUNT_SCREEN: "account-screen",
 }
 
 export default RouteNames;

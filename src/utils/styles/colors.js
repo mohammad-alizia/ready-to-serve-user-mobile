@@ -1,4 +1,5 @@
 export const appColors = {
+    textColor: '#000',
     grey: "#F3F3F3",
     backgroundColor: {
         light: "#fff",
