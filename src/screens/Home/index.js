@@ -7,12 +7,15 @@ import { appColors } from '../../utils/styles/colors';
 import CustomText from '../../components/common-ui/Text/CustomText';
 import getFontSize from '../../utils/styles/standardFonts';
 import { icons } from '../../assets/icons/iconsExporter';
+import HomemadeFoodTab from './Homemade-Food-Tab';
+import WholeSaleTab from './Wholesale-Tab';
 
 const { HomemadeFoodIcon, WholesaleIcon } = icons
 
 const renderTabBar = props => (
     <TabBar
         {...props}
+        pressColor='transparent'
         indicatorStyle={{
             backgroundColor: appColors.backgroundColor.dark,
             color: appColors.textColor,
@@ -48,7 +51,7 @@ const renderTabBar = props => (
 
 
 
-const HomeScreen = () => {
+const HomeScreen = (props) => {
 
     const [index, setIndex] = React.useState(0);
     const [routes] = React.useState([
@@ -58,14 +61,10 @@ const HomeScreen = () => {
 
     const renderScene = SceneMap({
         first: () => (
-            <Wrapper>
-                <CustomText>Home made</CustomText>
-            </Wrapper>
+            <HomemadeFoodTab {...props} />
         ),
         second: () => (
-            <Wrapper>
-                <CustomText>whole sale</CustomText>
-            </Wrapper>
+            <WholeSaleTab {...props} />
         ),
     });
 

@@ -27,21 +27,28 @@ import {
 import Navigation from './src/navigation';
 import RouteNames from './src/navigation/routeNames';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { Provider } from 'react-redux';
+import { persistor, store } from './src/redux/store/indx';
+import { PersistGate } from 'redux-persist/integration/react';
 
 
-function App(): React.JSX.Element {
+function App() {
 
   const [initialRoute, setInitialRoute] = useState(RouteNames.SPLASH_SCREEEN);
 
   return (
-    <GestureHandlerRootView>
-      <SafeAreaView style={{ flex: 1 }}>
-        <StatusBar />
-        <Navigation
-          initialRoute={initialRoute}
-        />
-      </SafeAreaView>
-    </GestureHandlerRootView>
+    <Provider store={store}>
+      <PersistGate persistor={persistor}>
+        <GestureHandlerRootView>
+          <SafeAreaView style={{ flex: 1 }}>
+            <StatusBar />
+            <Navigation
+              initialRoute={initialRoute}
+            />
+          </SafeAreaView>
+        </GestureHandlerRootView>
+      </PersistGate>
+    </Provider>
   );
 }
 
