@@ -30,6 +30,7 @@ const EnterNumber = () => {
                 defaultValue={value}
                 defaultCode="DM"
                 layout="first"
+                placeholder='Mobile number'
                 onChangeText={(text) => {
                     setValue(text);
                 }}
@@ -42,22 +43,24 @@ const EnterNumber = () => {
                     marginHorizontal: 'auto',
                     marginTop: 32,
                     height: 60,
-                    backgroundColor: "transparent",
-                    width: '100%'
+                    backgroundColor: "#fff",
+                    width: '100%',
+                    shadowColor:'white'
                 }}
                 flagButtonStyle={{
                     backgroundColor: "#EEEEEE",
                     borderRadius: 5,
-                    marginRight:5,
+                    marginRight: 5,
                 }}
                 textContainerStyle={{
-                    marginLeft:5,
+                    marginLeft: 5,
                     borderRadius: 5,
                     backgroundColor: "#EEEEEE",
                 }}
                 textInputStyle={{
-                    height: 50
+                    height: 50,
                 }}
+                
             />
         </View>
     )

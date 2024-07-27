@@ -21,12 +21,12 @@ const SocialSignInBtn = ({
 
 const styles = StyleSheet.create({
     btn: {
-        backgroundColor: 'red',
         height: 50,
         display: 'flex',
         flexDirection: 'row',
         borderRadius: 100,
-        overflow: 'hidden'
+        overflow: 'hidden',
+        backgroundColor:appColors.socialSignIn.light
     },
     box: {
         flex: 1,
@@ -34,7 +34,9 @@ const styles = StyleSheet.create({
         textAlignVertical: 'center',
         backgroundColor: appColors.socialSignIn.light,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        color: '#000',
+        marginLeft:5
     }
 })
 

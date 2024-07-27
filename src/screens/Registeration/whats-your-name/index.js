@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native'
+import { View, Text, TouchableWithoutFeedback, Keyboard, KeyboardAvoidingView, Platform } from 'react-native'
 import React, { useState } from 'react'
 import Wrapper from '../../../components/screen-components/register/Wapper/Wrapper'
 import TopText from '../../../components/screen-components/register/registeration-screen-components/TopText'
@@ -25,35 +25,38 @@ const WhatsYourNameScreen = ({ navigation }) => {
     }
 
     return (
-        <Wrapper>
-            <TopText text={`Let us know how to properly address you`} />
-            <View style={{ flex: 1, marginTop: 32 }}>
-                {/* {isSumitted && <Text>submitted</Text>} */}
-                {/* {(isSumitted && !fname) && <Text>First name required</Text>} */}
-                <CustomInputText
-                    value={fname}
-                    customStyles={{ marginBottom: 16 }}
-                    placeholder={`Please enter first name`}
-                    onChangeText={(e) => setFname(e)}
-                />
+        <KeyboardAvoidingView
+            behavior={Platform.OS === 'ios' ? 'padding' : 'padding'}
+            style={{ flex: 1 }}
+        >
+            <Wrapper>
+                <TopText text={`Let us know how to properly address you`} />
+                <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+                    <View style={{ flex: 1, marginTop: 32 }}>
+                        <CustomInputText
+                            value={fname}
+                            customStyles={{ marginBottom: 16 }}
+                            placeholder={`Please enter first name`}
+                            onChangeText={(e) => setFname(e)}
+                        />
+                        <CustomInputText
+                            value={sname}
+                            placeholder={`Please enter surname`}
+                            onChangeText={(e) => setSname(e)}
+                        />
+                    </View>
+                </TouchableWithoutFeedback>
 
-                {/* {(isSumitted && !sname) && <Text>Surname required</Text>} */}
-                <CustomInputText
-                    value={sname}
-                    placeholder={`Please enter surname`}
-                    onChangeText={(e) => setSname(e)}
-
-                />
-            </View>
-            <View style={{ flex: 1 / 5 }}>
-                <NextButton
-                    disabled={fname && sname ? false : true}
-                    title='Next'
-                    icon={true}
-                    onPress={onSubmit}
-                />
-            </View>
-        </Wrapper>
+                <View style={{ flex: 1 / 4 }}>
+                    <NextButton
+                        disabled={fname && sname ? false : true}
+                        title='Next'
+                        icon={true}
+                        onPress={onSubmit}
+                    />
+                </View>
+            </Wrapper>
+        </KeyboardAvoidingView>
     )
 }
 

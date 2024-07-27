@@ -27,6 +27,7 @@ const CustomInputText = ({
             onFocus={(e) => setFocus(true)}
             onBlur={(e) => setFocus(false)}
             cursorColor={"#000"}
+            placeholderTextColor={appColors.placeholderTextColor}
             {...props}
         />
     )
@@ -38,7 +39,8 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         paddingHorizontal: 10,
         borderWidth: 2,
-        borderColor: focus ? "#000" : appColors.grey
+        borderColor: focus ? "#000" : appColors.grey,
+        color: '#000',
     })
 })
 

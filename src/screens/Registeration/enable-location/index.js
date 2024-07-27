@@ -75,11 +75,11 @@ const EnableYourLocationScreen = ({ navigation }) => {
         <Wrapper>
             <TopText text={`This will make it easier to find your closest restaurants, homemade kitchens and grocery stores.`} />
 
-            {location ? (
+            {/* {location ? (
                 <Text>Latitude: {location.latitude}, Longitude: {location.longitude}</Text>
             ) : (
                 <Text>{errorMsg || 'Requesting location permission...'}</Text>
-            )}
+            )} */}
 
             <View style={{ flex: 1 }}>
                 <View style={{ height: 150, width: '100%', justifyContent: 'center', alignItems: 'center', marginTop: 50 }}>
@@ -95,7 +95,7 @@ const EnableYourLocationScreen = ({ navigation }) => {
                     isCenter={false}
                     onPress={openLocationSettings} />
             </View>
-            <View style={{ flex: 1 / 5 }}>
+            <View style={{ flex: 1 / 4 }}>
                 <NextButton title='Next' icon={true} onPress={handlePress} />
             </View>
         </Wrapper>

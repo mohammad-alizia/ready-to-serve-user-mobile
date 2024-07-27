@@ -1,5 +1,5 @@
-import { View, Text, StyleSheet } from 'react-native'
-import React, { useState } from 'react'
+import { View, Text, StyleSheet, KeyboardAvoidingView, Platform, TouchableWithoutFeedback, Keyboard } from 'react-native'
+import React, { useEffect, useState } from 'react'
 import Wrapper from '../../../components/screen-components/register/Wapper/Wrapper'
 import TopText from '../../../components/screen-components/register/registeration-screen-components/TopText'
 import CustomInputText from '../../../components/common-ui/input/CustomInputText'
@@ -40,43 +40,56 @@ const CreatePasswordScreen = ({ navigation }) => {
         navigation.navigate(RouteNames.WHATS_YOUR_NAME_SCREEN)
     }
 
-    return (
-        <Wrapper>
-            <TopText text={`Your password must be at least 8 characters long and contain at least one letter and digit`} />
+    useEffect(() => {
 
-            <View style={{ flex: 1, marginTop: 20 }}>
-                <View>
-                    <CustomInputTextPassword
-                        value={password}
-                        onChangeText={handleChange}
-                        placeholder={'Please enter your password'}
+    }, [isValid])
+
+    // console.log({ isValid })
+
+    return (
+        // <KeyboardAvoidingView
+        //     behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+        //     style={styles.container}
+        // >
+
+            <Wrapper>
+                <TopText text={`Your password must be at least 8 characters long and contain at least one letter and digit`} />
+
+                    <View style={{ flex: 1, marginTop: 20 }}>
+                        <View>
+                            <CustomInputTextPassword
+                                value={password}
+                                onChangeText={handleChange}
+                                placeholder={'Please enter your password'}
+                            />
+                        </View>
+                        <View style={{ marginTop: 20 }}>
+                            {isEdited && <>
+                                <Text style={isValid.length ? styles.valid : styles.invalid}>
+                                    {isValid.length ? '✔' : '✘'} At least 8 characters
+                                    {/* {isValid.length ? <Check /> : <Wrong />} At least 8 characters */}
+                                </Text>
+                                <Text style={isValid.digit ? styles.valid : styles.invalid}>
+                                    {isValid.digit ? '✔' : '✘'} At least one digit
+                                    {/* {isValid.digit ? <Check /> : <Wrong />} At least one digit */}
+                                </Text>
+                                <Text style={isValid.letter ? styles.valid : styles.invalid}>
+                                    {isValid.letter ? '✔' : '✘'} At least one letter
+                                    {/* {isValid.letter ? <Check /> : <Wrong />} At least one letter */}
+                                </Text>
+                            </>}
+                        </View>
+                    </View>
+                <View style={{ flex: 1 / 4 }}>
+                    <NextButton
+                        icon={true}
+                        title='Next'
+                        disabled={!(isValid.length && isValid.digit && isValid.letter)}
+                        onPress={onNext}
                     />
                 </View>
-                <View style={{ marginTop: 20 }}>
-                    {isEdited && <>
-                        <Text style={isValid.length ? styles.valid : styles.invalid}>
-                            {/* {isValid.length ? '✔' : '✘'} At least 8 characters */}
-                            {isValid.length ? <Check /> : <Wrong />} At least 8 characters
-                        </Text>
-                        <Text style={isValid.digit ? styles.valid : styles.invalid}>
-                            {isValid.digit ? <Check /> : <Wrong />} At least one digit
-                        </Text>
-                        <Text style={isValid.letter ? styles.valid : styles.invalid}>
-                            {isValid.letter ? <Check /> : <Wrong />} At least one letter
-                        </Text>
-                    </>}
-                </View>
-            </View>
-
-            <View style={{ flex: 1 / 5 }}>
-                <NextButton
-                    icon={true}
-                    title='Next'
-                    disabled={!(isValid.length && isValid.digit && isValid.letter)}
-                    onPress={onNext}
-                />
-            </View>
-        </Wrapper>
+            </Wrapper>
+        // </KeyboardAvoidingView>
     )
 }
 

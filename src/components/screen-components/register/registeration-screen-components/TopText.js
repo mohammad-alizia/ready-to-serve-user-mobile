@@ -10,9 +10,10 @@ const TopText = ({ text, customStyles }) => {
 
 const styles = StyleSheet.create({
     top_text: {
+        color: "#434044",
         textAlign: 'center',
         marginHorizontal: "auto",
-        marginTop: 20,
+        marginTop: 32,
         fontSize: getFontSize('menuField'),
     },
 });

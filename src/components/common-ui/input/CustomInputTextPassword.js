@@ -9,6 +9,7 @@ const { Show, Hide } = icons
 
 const CustomInputTextPassword = ({
     customStyles,
+    inputStyles,
     ...props
 }) => {
 
@@ -29,6 +30,8 @@ const CustomInputTextPassword = ({
     return (
         <View style={{ ...styles.input(focus), ...customStyles }}>
             <TextInput
+                style={{ color: "#000", ...inputStyles }}
+                placeholderTextColor={appColors.placeholderTextColor}
                 secureTextEntry={!isShow}
                 onFocus={(e) => setFocus(true)}
                 onBlur={(e) => setFocus(false)}
@@ -57,7 +60,8 @@ const styles = StyleSheet.create({
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-between",
-        alignItems: 'center'
+        alignItems: 'center',
+        color: '#000'
     })
 })
 

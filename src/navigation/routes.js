@@ -15,6 +15,7 @@ import BackButton from "../components/headers/back-button/BackButton"
 import Header from "../components/headers/Header"
 import RegisterationScreen from "../screens/Registeration"
 import TabNavigator from "./TabNavigator"
+import SearchScreen from "../screens/Home/SearchScreen"
 
 const commonProps = {
     title: '',
@@ -37,6 +38,7 @@ const routes = [
         component: OnBoardingScreen,
         options: {
             ...commonProps,
+            headerShown: false,
         }
     },
     {
@@ -45,6 +47,7 @@ const routes = [
         component: WelcomeScreen,
         options: {
             ...commonProps,
+            headerShown: false,
         }
     },
     {
@@ -123,6 +126,15 @@ const routes = [
         id: 12,
         name: RouteNames.HOME_SCREEN,
         component: TabNavigator,
+        options: {
+            ...commonProps,
+            headerShown: false
+        }
+    },
+    {
+        id: 13,
+        name: RouteNames.SEARCH_SCREEN,
+        component: SearchScreen,
         options: {
             ...commonProps,
             headerShown: false

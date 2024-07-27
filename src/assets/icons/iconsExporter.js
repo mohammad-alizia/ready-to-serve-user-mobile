@@ -1,3 +1,6 @@
+import Check from './intimation-icons/check.svg';
+import Wrong from './intimation-icons/wrong.svg';
+
 export const icons = {
     // tab-bar icons
     HomeTabIcon: require('./tab-bar-icons/home-tab-icon.svg').default,
@@ -12,12 +15,15 @@ export const icons = {
     Google: require('./social-sigin/google.svg').default,
     Apple: require('./social-sigin/apple.svg').default,
     Email: require('./social-sigin/email.svg').default,
-    Check: require('./intimation-icons/check.svg').default,
-    Wrong: require('./intimation-icons/wrong.svg').default,
+    Check,
+    Wrong,
     Show: require('./password-eye/see-password.svg').default,
     Hide: require('./password-eye/hide-password.svg').default,
 
     // home screen tab icons
     HomemadeFoodIcon: require('./home-icons/homemadefood.svg').default,
     WholesaleIcon: require('./home-icons/wholesale.svg').default,
+
+    // common
+    Search: require('../icons/common/search.svg').default,
 }

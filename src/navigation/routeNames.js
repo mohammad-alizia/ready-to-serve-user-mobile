@@ -10,10 +10,14 @@ const RouteNames = {
     ENABLE_LOCATION_SCREEN: "enable-location-screen",
     ADDRESS_INFO_SCREEN: "address-info-screen",
     SET_PREFERENCES_SCREEN: "set-preferences-screen",
-    HOME_SCREEN: "home-screen",
     SERVICES_SCREEN: "services-screen",
     ACTIVITY_SCREEN: "activity-screen",
     ACCOUNT_SCREEN: "account-screen",
+
+
+
+    HOME_SCREEN: "home-screen",
+    SEARCH_SCREEN: "search-screen",
 }
 
 export default RouteNames;

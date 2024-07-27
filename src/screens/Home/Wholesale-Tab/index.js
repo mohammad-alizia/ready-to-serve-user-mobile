@@ -1,12 +1,20 @@
 import { View, Text } from 'react-native'
 import React from 'react'
+import Wrapper from '../../../components/screen-components/register/Wapper/Wrapper'
+import Search from '../../../components/screen-components/register/home-screen-components/wholesale-tab/Search'
+import RouteNames from '../../../navigation/routeNames'
 
-const WholeSaleTab = () => {
-  return (
-    <View>
-      <Text>WholeSaleTab</Text>
-    </View>
-  )
+const WholeSaleTab = ({ navigation }) => {
+// console.log("WholeSaleTab", navigation)
+    const handlePress = () =>{
+        navigation.navigate(RouteNames.SEARCH_SCREEN)
+    }
+
+    return (
+        <Wrapper>
+            <Search onPress={handlePress} customBtnStyles={{ marginTop: 18 }} />
+        </Wrapper>
+    )
 }
 
 export default WholeSaleTab

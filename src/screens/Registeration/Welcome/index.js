@@ -7,43 +7,7 @@ import { appColors } from '../../../utils/styles/colors';
 import { Button } from '@ant-design/react-native';
 import RouteNames from '../../../navigation/routeNames';
 
-const { welcome } = svg
-
-const slides = [
-    {
-        id: 1,
-        image: svg.welcome,
-        title: 'Get started with Ready-To-Serve',
-        desc: 'Enjoy prompt and efficient service as we swiftly bring your orders to you, ensuring convenience without compromise.',
-    },
-];
-
-
-const SlideImage = ({ item, currentSlideIndex, setCurrentSlideIndex }) => {
-    return (
-        <View style={[{ alignItems: "center", backgroundColor: '', height: height }]}>
-            <View style={[{ alignItems: "center", backgroundColor: '' }, slideStyles.container]}>
-                <item.image.default />
-                <Image source={item.image} style={{ width, resizeMode: 'contain', padding: 10 }} />
-            </View>
-            <Text style={[slideStyles.title]}>{item.title}</Text>
-            <Text style={{ color: "#000", width: width * 0.7, textAlign: 'center', marginTop: 16 }}>{item.desc}</Text>
-
-        </View>
-    )
-}
-
-
-
 const WelcomeScreen = ({ navigation }) => {
-    const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
-    const ref = useRef(null);
-
-    const updateCurrentSlideIndex = (e) => {
-        const contentOffsetX = e.nativeEvent.contentOffset.x;
-        const currentIndex = Math.round(contentOffsetX / width)
-        setCurrentSlideIndex(currentIndex)
-    }
 
     const navigateWelcome = () => {
         navigation.navigate(RouteNames.REGISTER_SCREEN);
@@ -51,20 +15,17 @@ const WelcomeScreen = ({ navigation }) => {
     return (
         <SafeAreaView style={[styles.safeAreaView]}>
             <StatusBar backgroundColor={"white"} barStyle={'dark-content'}></StatusBar>
-            <FlatList
-                ref={ref}
-                onMomentumScrollEnd={updateCurrentSlideIndex}
-                pagingEnabled
-                data={slides}
-                contentContainerStyle={{ height: height }}
-                horizontal
-                showsHorizontalScrollIndicator={false}
-                renderItem={({ item }) => <SlideImage item={item} currentSlideIndex={currentSlideIndex} setCurrentSlideIndex={setCurrentSlideIndex} />}
-            />
+            <View style={{ flex: 1, overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center', }}>
+                <Image source={require('../../../assets/svg/welcome/welcome.png')} style={{ width: width }} resizeMode='contain' />
+                <View style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', width: width * 0.95 }}>
+                    <Text style={[slideStyles.title]}>Get started with Ready-To-Serve</Text>
+                    <Text style={{ color: "#000", textAlign: 'center', marginTop: 16 }}>Enjoy prompt and efficient service as we swiftly bring your orders to you, ensuring convenience without compromise.</Text>
+                </View>
+            </View>
             <View style={[styles.buttonContainer]}>
                 <NextButton title='Get Started' onPress={navigateWelcome} icon={true} />
             </View>
-        </SafeAreaView>
+        </SafeAreaView >
     )
 }
 
@@ -81,7 +42,7 @@ const slideStyles = StyleSheet.create({
         // fontFamily: "Gilroy-Bold",
         fontSize: 24,
         lineHeight: 28,
-        marginTop: 70
+        // marginTop: 70
         // letterSpacing:"0.02em",
     },
     desc: {
@@ -146,7 +107,7 @@ const styles = StyleSheet.create({
 
     buttonContainer: {
         width: width * 0.91,
-        marginHorizontal:'auto',
+        marginHorizontal: 'auto',
 
         height: 100,
         justifyContent: "center",

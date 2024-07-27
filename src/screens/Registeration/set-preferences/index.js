@@ -155,7 +155,7 @@ const SetPreferencesScreen = (props) => {
                             />
                         )))}
                 </View>
-                <View style={{ flex: 1 / 5 }}>
+                <View style={{ flex: 1 / 4 }}>
                     <NextButton title='Next' icon={true} onPress={onNext} />
                 </View>
             </Wrapper>
