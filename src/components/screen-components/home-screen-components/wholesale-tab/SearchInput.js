@@ -1,11 +1,11 @@
 import { View, Text, TextInput, StyleSheet, Pressable } from 'react-native'
 import React from 'react';
-import { icons } from '../../../../../assets/icons/iconsExporter';
-import CustomInputText from '../../../../common-ui/input/CustomInputText';
-import { appColors } from '../../../../../utils/styles/colors';
+import { icons } from '../../../../assets/icons/iconsExporter';
+import CustomInputText from '../../../common-ui/input/CustomInputText';
+import { appColors } from '../../../../utils/styles/colors';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import CustomText from '../../../../common-ui/Text/CustomText';
-import { width } from '../../../../../utils/dimensions';
+import CustomText from '../../../common-ui/Text/CustomText';
+import { width } from '../../../../utils/dimensions';
 
 const { Search, Microphone, Camera } = icons;
 
@@ -14,7 +14,6 @@ const Suggestion = ({
     onPress = () => { },
     value = "suggestion"
 }) => {
-    console.log("Suggestion-value", value)
     return (
         <TouchableOpacity onPress={onPress} style={{
             backgroundColor: appColors.grey,
@@ -37,8 +36,6 @@ const SearchInput = ({
     onCameraPress = () => { },
     onMicPress = () => { }
 }) => {
-
-    console.log("SearchInput", suggestions)
 
     React.useEffect(()=>{
 

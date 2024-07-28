@@ -7,8 +7,9 @@ import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
 
 import { width } from '../../../utils/dimensions';
 import Wrapper from '../../../components/screen-components/register/Wapper/Wrapper';
-import SearchInput from '../../../components/screen-components/register/home-screen-components/wholesale-tab/SearchInput';
-import AllTab from './All-Tab';
+import SearchInput from '../../../components/screen-components/home-screen-components/wholesale-tab/SearchInput';
+import AllTab from './Tabs/All-Tab';
+import RouteNames from '../../../navigation/routeNames';
 
 const renderTabBar = props => (
     <TabBar
@@ -49,6 +50,7 @@ const renderTabBar = props => (
 
 const SearchScreen = (props) => {
 
+    const { navigation } = props;
     const searchDebounceRef = React.useRef();
     const [index, setIndex] = React.useState(0);
     const [searchText, setSearchText] = React.useState('')
@@ -119,8 +121,11 @@ const SearchScreen = (props) => {
         }, 300);
     }
 
+    const onMicPress = () => {
+        navigation.navigate(RouteNames.VOICE_SEARCH_SCREEN)
+    }
+
     React.useEffect(() => {
-        console.log({ searchText, suggestions })
     }, [searchText])
 
 
@@ -131,6 +136,7 @@ const SearchScreen = (props) => {
                     suggestions={suggestions}
                     navigation={props.navigation}
                     onChangeText={onSearch}
+                    onMicPress={onMicPress}
                     customContainerStyles={{ width: width * 0.95, marginHorizontal: 'auto', marginTop: 20 }} />
             </View>
             <TabView

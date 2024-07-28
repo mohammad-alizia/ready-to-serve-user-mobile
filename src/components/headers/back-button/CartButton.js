@@ -22,8 +22,8 @@ const CartButton = ({ }) => {
 
 const styles = StyleSheet.create({
     btn: {
-        height: 40,
-        width: 40,
+        height: 35,
+        width: 35,
         borderRadius: 100,
         backgroundColor: appColors.grey,
         justifyContent: "center",
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
         borderRadius: 100,
         backgroundColor: appColors.black,
         position: "absolute",
-        top: 0,
+        top: -4 ,
         right: 0,
         justifyContent: "center",
         alignItems: "center",

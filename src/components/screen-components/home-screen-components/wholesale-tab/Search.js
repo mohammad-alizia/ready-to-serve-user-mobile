@@ -1,9 +1,9 @@
 import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
 import { TouchableOpacity } from 'react-native-gesture-handler'
-import { appColors } from '../../../../../utils/styles/colors'
-import CustomText from '../../../../common-ui/Text/CustomText'
-import { icons } from '../../../../../assets/icons/iconsExporter'
+import { appColors } from '../../../../utils/styles/colors'
+import CustomText from '../../../common-ui/Text/CustomText'
+import { icons } from '../../../../assets/icons/iconsExporter'
 
 const { Search: SearchIcon } = icons
 

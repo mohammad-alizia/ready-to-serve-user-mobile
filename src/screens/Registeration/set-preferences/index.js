@@ -112,7 +112,6 @@ const SetPreferencesScreen = (props) => {
     }
 
     useEffect(() => {
-        console.log(selectedFoodPref)
     }, [selectedFoodPref])
 
     return (

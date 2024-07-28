@@ -34,7 +34,6 @@ const renderTabBar = props => (
         }}
 
         renderLabel={({ route, focused, color }) => {
-            console.log("renderTab_props", props)
             return (
                 <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginLeft: 10 }}>
                     <route.icon />

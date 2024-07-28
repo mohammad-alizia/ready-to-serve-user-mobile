@@ -44,8 +44,6 @@ const CreatePasswordScreen = ({ navigation }) => {
 
     }, [isValid])
 
-    // console.log({ isValid })
-
     return (
         // <KeyboardAvoidingView
         //     behavior={Platform.OS === 'ios' ? 'padding' : 'height'}

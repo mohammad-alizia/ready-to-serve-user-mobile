@@ -1,8 +1,8 @@
 import { View, Text, StyleSheet, Pressable } from 'react-native'
 import React from 'react'
-import CustomText from '../../../../components/common-ui/Text/CustomText'
-import { appColors } from '../../../../utils/styles/colors'
-import RecentSearchTags from '../../../../components/screen-components/search-screen-components/RecentSearchTags'
+import CustomText from '../../../../../components/common-ui/Text/CustomText'
+import { appColors } from '../../../../../utils/styles/colors'
+import RecentSearchTags from '../../../../../components/screen-components/search-screen-components/RecentSearchTags'
 
 const RecentSearches = ({
     data = [],
@@ -65,7 +65,6 @@ const AllTab = ({
     }
 
     const onDeleteTag = (deleteData) => {
-        console.log({ deleteData })
         let temp = fakeData.filter(data => data?.id !== deleteData?.id)
         setFakeData(temp)
     }

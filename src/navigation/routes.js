@@ -16,6 +16,8 @@ import Header from "../components/headers/Header"
 import RegisterationScreen from "../screens/Registeration"
 import TabNavigator from "./TabNavigator"
 import SearchScreen from "../screens/Home/SearchScreen"
+import VoiceScreachScreen from "../screens/Home/SearchScreen/Voice-Search"
+import UserAccounScreen from "../screens/Account/User"
 
 const commonProps = {
     title: '',
@@ -138,6 +140,24 @@ const routes = [
         options: {
             ...commonProps,
             header: (props) => <Header title={'Search'} hasCart={true} {...props} />
+        }
+    },
+    {
+        id: 14,
+        name: RouteNames.VOICE_SEARCH_SCREEN,
+        component: VoiceScreachScreen,
+        options: {
+            ...commonProps,
+            header: (props) => <Header title={'Voice\nSearch'} hasCart={true} {...props} />
+        }
+    },
+    {
+        id: 14,
+        name: RouteNames.USER_ACCOUNT_SCREEN,
+        component: UserAccounScreen,
+        options: {
+            ...commonProps,
+            header: (props) => <Header title={'Settings'} hasCart={false} {...props} />
         }
     },
 ]

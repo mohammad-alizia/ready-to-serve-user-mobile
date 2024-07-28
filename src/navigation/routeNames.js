@@ -12,12 +12,15 @@ const RouteNames = {
     SET_PREFERENCES_SCREEN: "set-preferences-screen",
     SERVICES_SCREEN: "services-screen",
     ACTIVITY_SCREEN: "activity-screen",
+
     ACCOUNT_SCREEN: "account-screen",
+    USER_ACCOUNT_SCREEN: "user-account-screen",
 
 
 
     HOME_SCREEN: "home-screen",
     SEARCH_SCREEN: "search-screen",
+    VOICE_SEARCH_SCREEN: "search-voice-screen",
 }
 
 export default RouteNames;
