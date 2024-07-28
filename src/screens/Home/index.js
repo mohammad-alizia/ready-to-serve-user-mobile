@@ -21,10 +21,11 @@ const renderTabBar = props => (
             color: appColors.textColor,
             height: 3,
             elevation: 0,
+            marginLeft:  props.navigationState.index == 1 ? 20 : 0,
         }}
         inactiveColor='grey'
-        tabStyle={{ backgroundColor: "#fff" }}
-        contentContainerStyle={{ borderBottomWidth:4 }}
+        tabStyle={{ backgroundColor: "#fff", }}
+        contentContainerStyle={{ borderBottomWidth: 4, }}
         indicatorContainerStyle={{ backgroundColor: appColors.grey }}
         style={{
             backgroundColor: 'transparent',
@@ -33,14 +34,15 @@ const renderTabBar = props => (
         }}
 
         renderLabel={({ route, focused, color }) => {
+            console.log("renderTab_props", props)
             return (
-                <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', }}>
+                <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginLeft: 10 }}>
                     <route.icon />
 
                     <CustomText
                         style={{
                             fontSize: getFontSize('menuField'),
-                            marginTop: 5
+                            marginTop: 5,
                             // fontFamily: "",
                         }}>
                         {'  '}{route.title}

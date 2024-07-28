@@ -137,7 +137,7 @@ const routes = [
         component: SearchScreen,
         options: {
             ...commonProps,
-            headerShown: false
+            header: (props) => <Header title={'Search'} hasCart={true} {...props} />
         }
     },
 ]

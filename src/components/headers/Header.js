@@ -5,13 +5,15 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import { svg } from '../../assets/svg/svgExporter';
 import getFontSize from '../../utils/styles/standardFonts';
 import { appColors } from '../../utils/styles/colors';
+import CartButton from './back-button/CartButton';
 
 const { ArrowLeft } = icons;
 
 const Header = ({
     navigation,
     title,
-    customOnBackPress
+    customOnBackPress,
+    hasCart = false
 }) => {
 
     const onBackPress = () => {
@@ -38,8 +40,8 @@ const Header = ({
                     <Text style={{ fontSize: getFontSize('subHeading'), fontWeight: '600', textAlign: 'center', color: appColors.textColor }}>{title}</Text>
                 </View>
                 : <></>}
-            <View style={{ flex: 1 / 2, paddingRight: 10 }}>
-
+            <View style={{ ...styles.third }}>
+                {hasCart && <CartButton />}
             </View>
         </View>
     )
@@ -53,6 +55,14 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         backgroundColor: '#fff'
+    },
+    third: {
+        flex: 1 / 2,
+        paddingRight: 0,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "flex-end",
+        paddingRight:10
     }
 })
 

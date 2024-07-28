@@ -7,6 +7,7 @@ import { appColors } from '../../utils/styles/colors';
 import { Button } from '@ant-design/react-native';
 import RouteNames from '../../navigation/routeNames';
 import Wrapper from '../../components/screen-components/register/Wapper/Wrapper';
+import { CommonActions } from '@react-navigation/native';
 
 const slides = [
     {
@@ -100,7 +101,13 @@ const OnBoardingScreen = ({ navigation }) => {
     }
 
     const navigateWelcome = () => {
-        navigation.navigate(RouteNames.WELCOME_SCREEN);
+        // navigation.navigate(RouteNames.WELCOME_SCREEN);
+        navigation.dispatch(
+            CommonActions.reset({
+                index: 0,
+                routes: [{ name: RouteNames.WELCOME_SCREEN }]
+            })
+        )
     }
     return (
         <SafeAreaView style={[styles.safeAreaView]}>

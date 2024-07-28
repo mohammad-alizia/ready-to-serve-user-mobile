@@ -26,4 +26,11 @@ export const icons = {
 
     // common
     Search: require('../icons/common/search.svg').default,
+    Microphone: require('../icons/common/mic.svg').default,
+    Camera: require('../icons/common/camera.svg').default,
+    TagCross: require('../icons/common/tag-cross-btn.svg').default,
+
+    // cart
+    Cart: require('../icons/cart/cart.svg').default,
+
 }
