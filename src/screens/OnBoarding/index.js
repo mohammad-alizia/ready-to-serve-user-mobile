@@ -8,6 +8,7 @@ import { Button } from '@ant-design/react-native';
 import RouteNames from '../../navigation/routeNames';
 import Wrapper from '../../components/screen-components/register/Wapper/Wrapper';
 import { CommonActions } from '@react-navigation/native';
+import { fontFamily } from '../../assets/fonts/fontSelector';
 
 const slides = [
     {
@@ -151,14 +152,14 @@ const slideStyles = StyleSheet.create({
     },
     title: {
         color: "#000",
-        // fontFamily: "Gilroy-Bold",
+        fontFamily: fontFamily.euclid.medium,
         fontSize: 24,
         lineHeight: 28,
         marginTop: 70
         // letterSpacing:"0.02em",
     },
     desc: {
-        // fontFamily: "Gilroy-Regular",
+        fontFamily: fontFamily.euclid.regular,
         fontSize: 18,
         textAlign: "center",
         color: "#000"

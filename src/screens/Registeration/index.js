@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Keyboard, StyleSheet, Text, TouchableWithoutFeedback, View } from 'react-native'
 import { width } from '../../utils/dimensions'
 import { appColors } from '../../utils/styles/colors'
@@ -14,6 +14,10 @@ import TopText from '../../components/screen-components/register/registeration-s
 const { Apple, Google, Email } = icons
 
 const RegisterationScreen = ({ navigation }) => {
+
+    const [countryCode, setCountryCode] = useState('');
+    const [phoneNo, setPhoneNo] = useState('');
+
 
     const Continue = () => {
         navigation.navigate(RouteNames.OPT_VERFICATION_SCREEN);
@@ -33,7 +37,7 @@ const RegisterationScreen = ({ navigation }) => {
                         alignItems: 'center',
                         marginHorizontal: 'auto'
                     }}>
-                        <EnterNumber />
+                        <EnterNumber number={phoneNo} setNumber={setPhoneNo}/>
                         <NextButton
                             onPress={Continue}
                             customBtnStyles={{ marginTop: 30 }}

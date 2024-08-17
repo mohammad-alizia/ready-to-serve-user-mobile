@@ -3,8 +3,8 @@ import React, { useRef, useState } from 'react'
 import PhoneInput from 'react-native-phone-number-input'
 import { width } from '../../../utils/dimensions';
 
-const EnterNumber = () => {
-
+const EnterNumber = (props) => {
+    const { } = props;
     const [value, setValue] = useState("");
     const [formattedValue, setFormattedValue] = useState("");
     const [valid, setValid] = useState(false);
@@ -26,8 +26,8 @@ const EnterNumber = () => {
                 Enter your mobile number
             </Text>
             <PhoneInput
+                // defaultValue={value}
                 ref={phoneInput}
-                defaultValue={value}
                 defaultCode="DM"
                 layout="first"
                 placeholder='Mobile number'
@@ -45,7 +45,7 @@ const EnterNumber = () => {
                     height: 60,
                     backgroundColor: "#fff",
                     width: '100%',
-                    shadowColor:'white'
+                    shadowColor: 'white'
                 }}
                 flagButtonStyle={{
                     backgroundColor: "#EEEEEE",
@@ -60,7 +60,7 @@ const EnterNumber = () => {
                 textInputStyle={{
                     height: 50,
                 }}
-                
+
             />
         </View>
     )

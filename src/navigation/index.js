@@ -14,7 +14,7 @@ const Navigation = ({
     return (
         <NavigationContainer>
             <Stack.Navigator
-                initialRouteName={RouteNames.OPT_VERFICATION_SCREEN}>
+                initialRouteName={RouteNames.SPLASH_SCREEEN}>
                 {routes.map((screen, index) => {
                     return <Stack.Screen
                         key={index}

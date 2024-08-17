@@ -6,6 +6,8 @@ import { svg } from '../../../assets/svg/svgExporter';
 import { appColors } from '../../../utils/styles/colors';
 import { Button } from '@ant-design/react-native';
 import RouteNames from '../../../navigation/routeNames';
+import { fontFamily } from '../../../assets/fonts/fontSelector';
+import getFontSize from '../../../utils/styles/standardFonts';
 
 const WelcomeScreen = ({ navigation }) => {
 
@@ -18,7 +20,7 @@ const WelcomeScreen = ({ navigation }) => {
             <View style={{ flex: 1, overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center', }}>
                 <Image source={require('../../../assets/svg/welcome/welcome.png')} style={{ width: width }} resizeMode='contain' />
                 <View style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', width: width * 0.95 }}>
-                    <Text style={[slideStyles.title]}>Get started with Ready-To-Serve</Text>
+                    <Text style={{...slideStyles.title}}>Get started with Ready-To-Serve</Text>
                     <Text style={{ color: "#000", textAlign: 'center', marginTop: 16 }}>Enjoy prompt and efficient service as we swiftly bring your orders to you, ensuring convenience without compromise.</Text>
                 </View>
             </View>
@@ -39,14 +41,14 @@ const slideStyles = StyleSheet.create({
     },
     title: {
         color: "#000",
-        // fontFamily: "Gilroy-Bold",
-        fontSize: 24,
+        fontFamily: fontFamily.euclid.medium,
+        fontSize: getFontSize('subHeading'),
         lineHeight: 28,
         // marginTop: 70
         // letterSpacing:"0.02em",
     },
     desc: {
-        // fontFamily: "Gilroy-Regular",
+        fontFamily: fontFamily.euclid.regular,
         fontSize: 18,
         textAlign: "center",
         color: "#000"
