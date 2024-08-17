@@ -10,18 +10,23 @@ import { icons } from '../../assets/icons/iconsExporter'
 import getFontSize from '../../utils/styles/standardFonts'
 import RouteNames from '../../navigation/routeNames'
 import TopText from '../../components/screen-components/register/registeration-screen-components/TopText'
+import useService from './useService'
 
 const { Apple, Google, Email } = icons
 
 const RegisterationScreen = ({ navigation }) => {
 
+    const { loginWithPhoneNumber } = useService();
     const [countryCode, setCountryCode] = useState('');
     const [phoneNo, setPhoneNo] = useState('');
 
 
-    const Continue = () => {
-        navigation.navigate(RouteNames.OPT_VERFICATION_SCREEN);
+    const Continue = async () => {
+        loginWithPhoneNumber(phoneNo)
+        // navigation.navigate(RouteNames.OPT_VERFICATION_SCREEN);
     }
+
+    console.log({phoneNo})
 
     return (
         <Wrapper>
@@ -37,8 +42,9 @@ const RegisterationScreen = ({ navigation }) => {
                         alignItems: 'center',
                         marginHorizontal: 'auto'
                     }}>
-                        <EnterNumber number={phoneNo} setNumber={setPhoneNo}/>
+                        <EnterNumber number={phoneNo} setNumber={setPhoneNo} />
                         <NextButton
+                            disabled={phoneNo ? false : true}
                             onPress={Continue}
                             customBtnStyles={{ marginTop: 30 }}
                             title='Continue'

@@ -3,8 +3,10 @@ import React, { useRef, useState } from 'react'
 import PhoneInput from 'react-native-phone-number-input'
 import { width } from '../../../utils/dimensions';
 
-const EnterNumber = (props) => {
-    const { } = props;
+const EnterNumber = ({
+    number, setNumber = () => { },
+}) => {
+    // const { } = props;
     const [value, setValue] = useState("");
     const [formattedValue, setFormattedValue] = useState("");
     const [valid, setValid] = useState(false);
@@ -32,7 +34,7 @@ const EnterNumber = (props) => {
                 layout="first"
                 placeholder='Mobile number'
                 onChangeText={(text) => {
-                    setValue(text);
+                    setNumber(text);
                 }}
                 onChangeFormattedText={(text) => {
                     setFormattedValue(text);
